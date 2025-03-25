@@ -46,10 +46,10 @@ const ListEmployeeComponent = () => {
         <table className='table table-bordered table-hover'>
             <thead>
                 <tr>
-                    <th>Employee Id</th>
+                    <th>Employee ID</th>
                     <th>Employee First Name</th>
                     <th>Employee Last Name</th>
-                    <th>Employee Email Id</th>
+                    <th>Employee Email</th>
                     <th>Actions</th>
                 </tr>
             </thead>
