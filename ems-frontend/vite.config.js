@@ -10,6 +10,7 @@ import react from '@vitejs/plugin-react'
 //   }
 // })
 export default defineConfig({
+  plugins: [react()],
   server: {
     allowedHosts: ["ems-frontend-c8eqh4bwccbngjcy.uksouth-01.azurewebsites.net"],
     host: "0.0.0.0",
