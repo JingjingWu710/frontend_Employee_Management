@@ -17,8 +17,8 @@ jobs:
 
     - name: Build and push Docker image
       run: |
-        docker build -t JingjingWuems.azurecr.io/ems-frontend:latest .
-        docker push JingjingWuems.azurecr.io/ems-frontend:latest
+          docker build -t JingjingWuems.azurecr.io/ems-frontend:latest -f ems-frontend/Dockerfile ems-frontend/
+          docker push JingjingWuems.azurecr.io/ems-frontend:latest
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
