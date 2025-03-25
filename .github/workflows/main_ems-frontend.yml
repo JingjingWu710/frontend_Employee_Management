@@ -30,10 +30,17 @@ jobs:
           npm run build --if-present
           npm run test --if-present
 
-      - name: Zip artifact for deployment
+      - name: Check dist before zipping
         run: |
-         cd ems-frontend/dist
-         zip -r ../release.zip .
+         ls -la ems-frontend/dist
+
+      - name: Check dist details
+        run: ls -l ems-frontend
+
+      
+      - name: Zip artifact for deployment
+        run: zip -r release.zip dist
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
