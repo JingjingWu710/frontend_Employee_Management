@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import { deleteEmployee, listEmployees } from '../services/EmployeeService'
+import { getDepartmentById } from '../services/DepartmentService';
 import { useNavigate } from 'react-router-dom'
 
 const ListEmployeeComponent = () => {
 
     const [employees, setEmployees] = useState([])
-
+    const [departmentNames, setDepartmentNames] = useState({});
     const navigator = useNavigate();
 
     useEffect(() => {
@@ -19,6 +20,23 @@ const ListEmployeeComponent = () => {
             console.error(error)
         })
     }
+
+    useEffect(() => {
+        employees.forEach(employee => {
+            if (employee.departmentId && !departmentNames[employee.departmentId]) {
+                getDepartmentById(employee.departmentId)
+                    .then(response => {
+                        setDepartmentNames(prev => ({
+                            ...prev,
+                            [employee.departmentId]: response.data.departmentName
+                        }));
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    });
+            }
+        });
+    }, [employees]);
 
     function addNewEmployee(){
         navigator('/add-employee')
@@ -46,10 +64,11 @@ const ListEmployeeComponent = () => {
         <table className='table table-bordered table-hover'>
             <thead>
                 <tr>
-                    <th>Employee ID</th>
+                    <th>Employee Id</th>
                     <th>Employee First Name</th>
                     <th>Employee Last Name</th>
-                    <th>Employee Email</th>
+                    <th>Employee Email Id</th>
+                    <th>Department</th>
                     <th>Actions</th>
                 </tr>
             </thead>
@@ -61,6 +80,7 @@ const ListEmployeeComponent = () => {
                             <td>{employee.firstName}</td>
                             <td>{employee.lastName}</td>
                             <td>{employee.email}</td>
+                            <td>{departmentNames[employee.departmentId]}</td>
                             <td>
                                 <button className='btn btn-info' onClick={() => updateEmployee(employee.id)}
                                     style={{margin:"10px"}}>Update</button>
