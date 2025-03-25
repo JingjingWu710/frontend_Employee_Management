@@ -11,6 +11,7 @@ import react from '@vitejs/plugin-react'
 // })
 export default defineConfig({
   server: {
+    allowedHosts: ["ems-frontend-c8eqh4bwccbngjcy.uksouth-01.azurewebsites.net"],
     host: "0.0.0.0",
     port: 8080
   }
