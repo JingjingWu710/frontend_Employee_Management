@@ -7,7 +7,7 @@ Azure domain (linked with backend): [Azure](ems-frontend-c8eqh4bwccbngjcy.uksout
 
 Backend GitHub URL: [backend codes](https://github.com/JingjingWu710/backend_Employee_Management)
 
-Backend Azure domain (you can push request with Postman or frontend website): [Azure (backend)](https://github.com/JingjingWu710/backend_Employee_Management)
+Backend Azure domain (you can push request with Postman or frontend website): [Azure (backend)](ems-backend-fggffxcxf2fuhqce.uksouth-01.azurewebsites.net)
 
 _The codes here may slightly be different from primitive codes in https://github.com/JingjingWu710/Employee_Management due to the requirements of Azure deployment. Therefore, here are the codes that Azure actually receives._
 
