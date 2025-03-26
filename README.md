@@ -3,6 +3,8 @@
 
 The frontend and backed are independently deployed with different Azure app service.
 
+Demo Video: https://www.loom.com/share/c8017a267a5844ca8eda892ea1d9518a?sid=66566c4a-9cba-45b1-b78f-4dce7555ac69
+
 Azure domain (linked with backend): [Azure](https://ems-frontend-c8eqh4bwccbngjcy.uksouth-01.azurewebsites.net)
 
 Backend GitHub URL: [backend codes](https://github.com/JingjingWu710/backend_Employee_Management)
